@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 12, 2019 8:45:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="shoping.model.Characteristics" table="characteristics" catalog="pro_ventas" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="products" class="shoping.model.Products" fetch="select">
+            <column name="product_id" not-null="true" />
+        </many-to-one>
+        <property name="ram" type="int">
+            <column name="RAM" not-null="true" />
+        </property>
+        <property name="disk" type="int">
+            <column name="Disk" not-null="true" />
+        </property>
+        <property name="processor" type="string">
+            <column name="processor" length="45" not-null="true" />
+        </property>
+        <property name="screen" type="string">
+            <column name="screen" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
